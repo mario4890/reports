@@ -10,7 +10,7 @@ example:
 <center>DB_CONNECTION=mysql</center>
 <center>DB_HOST=192.168.10.10</center>
 <center>DB_PORT=3306</center>
-<center>DB_DATABASE=raports</center>
+<center>DB_DATABASE=reports</center>
 <center>DB_USERNAME=homestead</center>
 <center>DB_PASSWORD=secret</center>
 

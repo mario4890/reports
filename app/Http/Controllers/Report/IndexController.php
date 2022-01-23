@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Report;
 
 use App\Http\Controllers\Controller;
+use App\Models\Order;
 use Illuminate\Http\Request;
 
 class IndexController extends Controller
@@ -22,9 +23,10 @@ class IndexController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index(Request $request)
+    public function index(Request $request, Order $orderObj)
     {
-        dd($request->all());
-        return view('home');
+        $orders = $orderObj->getOrdersByDate($request->date_start, $request->date_to);
+
+        return view('report.table', compact('orders'));
     }
 }
